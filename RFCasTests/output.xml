@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231003 11:29:30.928" rpa="false" schemaversion="4">
+<suite id="s1" name="CreerUnNouveauFiltreNominal" source="g:\Bois_de_Boulogne\Season4\Project Synthese\Automation_Test_DataPool_RF\RFCasTests\Scripts\CreerUnNouveauFiltreNominal.robot">
+<kw name="Open browser login and preconditions pour creer nouveau filtre nominal" library="keywords" type="SETUP">
+<kw name="Login" library="keywords">
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+<arg>${vUsername}</arg>
+<arg>${vPassword}</arg>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20231003 11:29:31.395" endtime="20231003 11:29:31.395"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+<arg>options=add_argument('--lang=fr')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231003 11:29:31.397" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8088/share/page'.</msg>
+<status status="PASS" starttime="20231003 11:29:31.396" endtime="20231003 11:29:34.147"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231003 11:29:34.147" endtime="20231003 11:29:34.269"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_UserName}</arg>
+<arg>${vUsername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:34.272" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20231003 11:29:34.270" endtime="20231003 11:29:34.369"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:34.370" level="INFO">Typing text '12345678' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20231003 11:29:34.369" endtime="20231003 11:29:34.472"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_Login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:34.473" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Connexion')]'.</msg>
+<status status="PASS" starttime="20231003 11:29:34.473" endtime="20231003 11:29:35.113"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lblTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:35.113" endtime="20231003 11:29:35.195"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${lblTitle}</arg>
+<arg>Tableau de bord de</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231003 11:29:35.215" level="INFO">Element 'xpath=//h1[@id='HEADER_TITLE']/span' contains text 'Tableau de bord de'.</msg>
+<status status="PASS" starttime="20231003 11:29:35.195" endtime="20231003 11:29:35.215"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:31.394" endtime="20231003 11:29:35.215"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:29:38.216" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:29:35.215" endtime="20231003 11:29:38.216"/>
+</kw>
+<kw name="Affichage la page Outil Admin" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_headerOutilsAdmin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:38.217" endtime="20231003 11:29:38.245"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_headerOutilsAdmin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:38.246" level="INFO">Clicking element 'xpath=//div[@id='HEADER_ADMIN_CONSOLE']/span/a'.</msg>
+<status status="PASS" starttime="20231003 11:29:38.245" endtime="20231003 11:29:41.195"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_GestionnaireCategorie}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:41.196" endtime="20231003 11:29:41.225"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:38.216" endtime="20231003 11:29:41.227"/>
+</kw>
+<kw name="Affichage la page de Gestionnaire de recherche" library="keywords">
+<kw name="Affichage l'option de menu dans la page Outil Admin" library="keywords">
+<arg>Gestionnaire de recherche</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_Page_Element_P1}${option}${admin_Page_Element_P2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:41.230" level="INFO">Clicking element 'xpath://a[contains(text(),'Gestionnaire de recherche')]'.</msg>
+<status status="PASS" starttime="20231003 11:29:41.229" endtime="20231003 11:29:41.535"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:29:44.535" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:29:41.535" endtime="20231003 11:29:44.535"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:41.227" endtime="20231003 11:29:44.537"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:29:47.538" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:29:44.537" endtime="20231003 11:29:47.538"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_Ici}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:47.539" endtime="20231003 11:29:47.578"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Ici}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:47.579" level="INFO">Clicking element 'xpath://a[@href='/share/page/dp/ws/faceted-search-config']'.</msg>
+<status status="PASS" starttime="20231003 11:29:47.578" endtime="20231003 11:29:47.690"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:29:51.692" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20231003 11:29:47.692" endtime="20231003 11:29:51.692"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:41.227" endtime="20231003 11:29:51.693"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:31.393" endtime="20231003 11:29:51.693"/>
+</kw>
+<test id="s1-t1" name="Cas1" line="23">
+<kw name="Créer un nouveau filtre">
+<arg>ID_FiltreData11</arg>
+<arg>Nom_Filtre_Data1</arg>
+<arg>stcp:additionalInformation (Additional Site Information)</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url= http://localhost:8088/share/page/dp/ws/faceted-search-config</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231003 11:29:51.698" endtime="20231003 11:29:51.862"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:29:54.863" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:29:51.862" endtime="20231003 11:29:54.864"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_CreerNouveauFiltre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:54.864" endtime="20231003 11:29:54.911"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_CreerNouveauFiltre}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:54.913" level="INFO">Clicking element 'xpath://span[text()='Créer un nouveau filtre']'.</msg>
+<status status="PASS" starttime="20231003 11:29:54.912" endtime="20231003 11:29:55.283"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ ID_du_filtre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:55.283" endtime="20231003 11:29:55.343"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ID_du_filtre}</arg>
+<arg>${vID_du_filtre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:55.345" level="INFO">Typing text 'ID_FiltreData11' into text field 'xpath://input[@name='filterID']'.</msg>
+<status status="PASS" starttime="20231003 11:29:55.343" endtime="20231003 11:29:55.487"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${Nom_du_filtre}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:29:55.489" level="INFO">Simulating Mouse Down on element 'xpath://input[@name='displayName']'.</msg>
+<status status="PASS" starttime="20231003 11:29:55.488" endtime="20231003 11:29:55.800"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Nom_du_filtre}</arg>
+<arg>${vNom_du_filtre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:55.802" level="INFO">Typing text 'Nom_Filtre_Data1' into text field 'xpath://input[@name='displayName']'.</msg>
+<status status="PASS" starttime="20231003 11:29:55.800" endtime="20231003 11:29:55.969"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Btn_list}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:55.970" endtime="20231003 11:29:56.018"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:56.019" level="INFO">Clicking element '//input[@role='button presentation']'.</msg>
+<status status="PASS" starttime="20231003 11:29:56.019" endtime="20231003 11:29:56.135"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${propriete_Combobox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:29:56.136" endtime="20231003 11:29:56.439"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${propriete_Combobox}${propriete_Combobox_Value_P1}${proprieteOption}${propriete_Combobox_Value_P2}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:29:56.442" level="INFO">Simulating Mouse Down on element 'xpath://div[@id='widget_FORM_FACET_QNAME_CONTROL_dropdown']/child::div[@id='FORM_FACET_QNAME_CONTROL_popup']/child::div[text()='stcp:additionalInformation (Additional Site Information)']'.</msg>
+<status status="PASS" starttime="20231003 11:29:56.439" endtime="20231003 11:29:56.757"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${propriete_Combobox}${propriete_Combobox_Value_P1}${proprieteOption}${propriete_Combobox_Value_P2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:56.759" level="INFO">Clicking element 'xpath://div[@id='widget_FORM_FACET_QNAME_CONTROL_dropdown']/child::div[@id='FORM_FACET_QNAME_CONTROL_popup']/child::div[text()='stcp:additionalInformation (Additional Site Information)']'.</msg>
+<status status="PASS" starttime="20231003 11:29:56.757" endtime="20231003 11:29:56.849"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${btnEnregistrer}</var>
+<arg>${Le_bouton_enregistrer}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231003 11:29:56.875" level="INFO">${btnEnregistrer} = &lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_57")&gt;</msg>
+<status status="PASS" starttime="20231003 11:29:56.849" endtime="20231003 11:29:56.875"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${btnEnregistrer}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:29:56.876" level="INFO">Simulating Mouse Down on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_57")&gt;'.</msg>
+<status status="PASS" starttime="20231003 11:29:56.876" endtime="20231003 11:29:57.168"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnEnregistrer}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:29:57.170" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_57")&gt;'.</msg>
+<status status="PASS" starttime="20231003 11:29:57.169" endtime="20231003 11:29:57.252"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:00.252" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:29:57.252" endtime="20231003 11:30:00.252"/>
+</kw>
+<kw name="Verifier l'ID du filtre">
+<arg>${vID_du_filtre}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${id_du_Filtre_P1}${idValue}${id_du_Filtre_P2}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:00.255" endtime="20231003 11:30:00.345"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${id_du_Filtre_P1}${idValue}${id_du_Filtre_P2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231003 11:30:00.380" level="INFO">Element 'xpath://span/child::span[text()='ID_FiltreData11']' is displayed.</msg>
+<status status="PASS" starttime="20231003 11:30:00.346" endtime="20231003 11:30:00.381"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:00.253" endtime="20231003 11:30:00.382"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:03.383" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:00.382" endtime="20231003 11:30:03.383"/>
+</kw>
+<kw name="Supprimer un filtre">
+<arg>${vID_du_filtre}</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url= http://localhost:8088/share/page/dp/ws/faceted-search-config</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231003 11:30:03.385" endtime="20231003 11:30:03.571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:03.572" endtime="20231003 11:30:03.625"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231003 11:30:03.625" endtime="20231003 11:30:03.935"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:03.938" level="INFO">Clicking element 'xpath://img[@title="Cliquez pour supprimer ''ID_FiltreData11''"]'.</msg>
+<status status="PASS" starttime="20231003 11:30:03.936" endtime="20231003 11:30:04.077"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bouton_confirmerSupressionFiltre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:04.077" endtime="20231003 11:30:04.136"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bouton_confirmerSupressionFiltre}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:04.138" level="INFO">Clicking element 'id:ALF_CRUD_SERVICE_DELETE_CONFIRMATION_DIALOG_CONFIRM_label'.</msg>
+<status status="PASS" starttime="20231003 11:30:04.137" endtime="20231003 11:30:04.278"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:03.384" endtime="20231003 11:30:04.278"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:07.280" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:04.279" endtime="20231003 11:30:07.281"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:51.698" endtime="20231003 11:30:07.281"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:51.693" endtime="20231003 11:30:07.283"/>
+</test>
+<test id="s1-t2" name="Cas2" line="23">
+<kw name="Créer un nouveau filtre">
+<arg>ID_FiltreData21</arg>
+<arg>Nom_Filtre_Data2</arg>
+<arg>stcp:additionalInformation (Additional Site Information)</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url= http://localhost:8088/share/page/dp/ws/faceted-search-config</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231003 11:30:07.297" endtime="20231003 11:30:07.438"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:10.439" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:07.438" endtime="20231003 11:30:10.439"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_CreerNouveauFiltre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:10.440" endtime="20231003 11:30:10.478"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_CreerNouveauFiltre}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:10.480" level="INFO">Clicking element 'xpath://span[text()='Créer un nouveau filtre']'.</msg>
+<status status="PASS" starttime="20231003 11:30:10.478" endtime="20231003 11:30:10.787"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ ID_du_filtre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:10.787" endtime="20231003 11:30:10.840"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ID_du_filtre}</arg>
+<arg>${vID_du_filtre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:10.841" level="INFO">Typing text 'ID_FiltreData21' into text field 'xpath://input[@name='filterID']'.</msg>
+<status status="PASS" starttime="20231003 11:30:10.840" endtime="20231003 11:30:11.017"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${Nom_du_filtre}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:30:11.020" level="INFO">Simulating Mouse Down on element 'xpath://input[@name='displayName']'.</msg>
+<status status="PASS" starttime="20231003 11:30:11.018" endtime="20231003 11:30:11.370"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Nom_du_filtre}</arg>
+<arg>${vNom_du_filtre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:11.372" level="INFO">Typing text 'Nom_Filtre_Data2' into text field 'xpath://input[@name='displayName']'.</msg>
+<status status="PASS" starttime="20231003 11:30:11.371" endtime="20231003 11:30:11.627"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Btn_list}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:11.627" endtime="20231003 11:30:11.675"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:11.678" level="INFO">Clicking element '//input[@role='button presentation']'.</msg>
+<status status="PASS" starttime="20231003 11:30:11.677" endtime="20231003 11:30:11.797"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${propriete_Combobox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:11.798" endtime="20231003 11:30:12.068"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${propriete_Combobox}${propriete_Combobox_Value_P1}${proprieteOption}${propriete_Combobox_Value_P2}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:30:12.070" level="INFO">Simulating Mouse Down on element 'xpath://div[@id='widget_FORM_FACET_QNAME_CONTROL_dropdown']/child::div[@id='FORM_FACET_QNAME_CONTROL_popup']/child::div[text()='stcp:additionalInformation (Additional Site Information)']'.</msg>
+<status status="PASS" starttime="20231003 11:30:12.069" endtime="20231003 11:30:12.396"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${propriete_Combobox}${propriete_Combobox_Value_P1}${proprieteOption}${propriete_Combobox_Value_P2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:12.397" level="INFO">Clicking element 'xpath://div[@id='widget_FORM_FACET_QNAME_CONTROL_dropdown']/child::div[@id='FORM_FACET_QNAME_CONTROL_popup']/child::div[text()='stcp:additionalInformation (Additional Site Information)']'.</msg>
+<status status="PASS" starttime="20231003 11:30:12.397" endtime="20231003 11:30:12.499"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${btnEnregistrer}</var>
+<arg>${Le_bouton_enregistrer}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231003 11:30:12.527" level="INFO">${btnEnregistrer} = &lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_99")&gt;</msg>
+<status status="PASS" starttime="20231003 11:30:12.499" endtime="20231003 11:30:12.528"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${btnEnregistrer}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:30:12.530" level="INFO">Simulating Mouse Down on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_99")&gt;'.</msg>
+<status status="PASS" starttime="20231003 11:30:12.528" endtime="20231003 11:30:12.819"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnEnregistrer}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:12.821" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_99")&gt;'.</msg>
+<status status="PASS" starttime="20231003 11:30:12.820" endtime="20231003 11:30:12.933"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:15.935" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:12.934" endtime="20231003 11:30:15.935"/>
+</kw>
+<kw name="Verifier l'ID du filtre">
+<arg>${vID_du_filtre}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${id_du_Filtre_P1}${idValue}${id_du_Filtre_P2}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:15.937" endtime="20231003 11:30:15.984"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${id_du_Filtre_P1}${idValue}${id_du_Filtre_P2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231003 11:30:16.010" level="INFO">Element 'xpath://span/child::span[text()='ID_FiltreData21']' is displayed.</msg>
+<status status="PASS" starttime="20231003 11:30:15.985" endtime="20231003 11:30:16.011"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:15.936" endtime="20231003 11:30:16.011"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:19.012" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:16.012" endtime="20231003 11:30:19.012"/>
+</kw>
+<kw name="Supprimer un filtre">
+<arg>${vID_du_filtre}</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url= http://localhost:8088/share/page/dp/ws/faceted-search-config</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231003 11:30:19.014" endtime="20231003 11:30:19.102"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:19.103" endtime="20231003 11:30:19.152"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231003 11:30:19.152" endtime="20231003 11:30:19.439"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:19.441" level="INFO">Clicking element 'xpath://img[@title="Cliquez pour supprimer ''ID_FiltreData21''"]'.</msg>
+<status status="PASS" starttime="20231003 11:30:19.439" endtime="20231003 11:30:19.537"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bouton_confirmerSupressionFiltre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:19.538" endtime="20231003 11:30:19.566"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bouton_confirmerSupressionFiltre}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:19.569" level="INFO">Clicking element 'id:ALF_CRUD_SERVICE_DELETE_CONFIRMATION_DIALOG_CONFIRM_label'.</msg>
+<status status="PASS" starttime="20231003 11:30:19.567" endtime="20231003 11:30:19.641"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:19.013" endtime="20231003 11:30:19.641"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:22.643" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:19.642" endtime="20231003 11:30:22.643"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:07.295" endtime="20231003 11:30:22.643"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:07.287" endtime="20231003 11:30:22.644"/>
+</test>
+<test id="s1-t3" name="Cas3" line="23">
+<kw name="Créer un nouveau filtre">
+<arg>ID_FiltreData31</arg>
+<arg>Nom_Filtre_Data3</arg>
+<arg>stcp:additionalInformation (Additional Site Information)</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url= http://localhost:8088/share/page/dp/ws/faceted-search-config</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231003 11:30:22.656" endtime="20231003 11:30:22.790"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:25.792" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:22.790" endtime="20231003 11:30:25.793"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_CreerNouveauFiltre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:25.793" endtime="20231003 11:30:25.837"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_CreerNouveauFiltre}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:25.839" level="INFO">Clicking element 'xpath://span[text()='Créer un nouveau filtre']'.</msg>
+<status status="PASS" starttime="20231003 11:30:25.837" endtime="20231003 11:30:26.127"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ ID_du_filtre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:26.128" endtime="20231003 11:30:26.189"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ID_du_filtre}</arg>
+<arg>${vID_du_filtre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:26.191" level="INFO">Typing text 'ID_FiltreData31' into text field 'xpath://input[@name='filterID']'.</msg>
+<status status="PASS" starttime="20231003 11:30:26.189" endtime="20231003 11:30:26.358"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${Nom_du_filtre}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:30:26.361" level="INFO">Simulating Mouse Down on element 'xpath://input[@name='displayName']'.</msg>
+<status status="PASS" starttime="20231003 11:30:26.359" endtime="20231003 11:30:26.692"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Nom_du_filtre}</arg>
+<arg>${vNom_du_filtre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:26.694" level="INFO">Typing text 'Nom_Filtre_Data3' into text field 'xpath://input[@name='displayName']'.</msg>
+<status status="PASS" starttime="20231003 11:30:26.693" endtime="20231003 11:30:26.889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Btn_list}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:26.890" endtime="20231003 11:30:26.934"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Btn_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:26.936" level="INFO">Clicking element '//input[@role='button presentation']'.</msg>
+<status status="PASS" starttime="20231003 11:30:26.935" endtime="20231003 11:30:27.076"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${propriete_Combobox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:27.076" endtime="20231003 11:30:27.358"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${propriete_Combobox}${propriete_Combobox_Value_P1}${proprieteOption}${propriete_Combobox_Value_P2}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:30:27.361" level="INFO">Simulating Mouse Down on element 'xpath://div[@id='widget_FORM_FACET_QNAME_CONTROL_dropdown']/child::div[@id='FORM_FACET_QNAME_CONTROL_popup']/child::div[text()='stcp:additionalInformation (Additional Site Information)']'.</msg>
+<status status="PASS" starttime="20231003 11:30:27.359" endtime="20231003 11:30:27.687"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${propriete_Combobox}${propriete_Combobox_Value_P1}${proprieteOption}${propriete_Combobox_Value_P2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:27.690" level="INFO">Clicking element 'xpath://div[@id='widget_FORM_FACET_QNAME_CONTROL_dropdown']/child::div[@id='FORM_FACET_QNAME_CONTROL_popup']/child::div[text()='stcp:additionalInformation (Additional Site Information)']'.</msg>
+<status status="PASS" starttime="20231003 11:30:27.689" endtime="20231003 11:30:27.783"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${btnEnregistrer}</var>
+<arg>${Le_bouton_enregistrer}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231003 11:30:27.806" level="INFO">${btnEnregistrer} = &lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_143")&gt;</msg>
+<status status="PASS" starttime="20231003 11:30:27.783" endtime="20231003 11:30:27.807"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${btnEnregistrer}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20231003 11:30:27.809" level="INFO">Simulating Mouse Down on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_143")&gt;'.</msg>
+<status status="PASS" starttime="20231003 11:30:27.807" endtime="20231003 11:30:28.106"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnEnregistrer}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:28.107" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="28e8e7e552051dc99f8f4410ad9d28c5", element="8298CB66782293EC7E89D31973FD50D6_element_143")&gt;'.</msg>
+<status status="PASS" starttime="20231003 11:30:28.106" endtime="20231003 11:30:28.179"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:31.181" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:28.180" endtime="20231003 11:30:31.181"/>
+</kw>
+<kw name="Verifier l'ID du filtre">
+<arg>${vID_du_filtre}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${id_du_Filtre_P1}${idValue}${id_du_Filtre_P2}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:31.183" endtime="20231003 11:30:31.236"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${id_du_Filtre_P1}${idValue}${id_du_Filtre_P2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231003 11:30:31.276" level="INFO">Element 'xpath://span/child::span[text()='ID_FiltreData31']' is displayed.</msg>
+<status status="PASS" starttime="20231003 11:30:31.236" endtime="20231003 11:30:31.276"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:31.182" endtime="20231003 11:30:31.277"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:34.279" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:31.277" endtime="20231003 11:30:34.279"/>
+</kw>
+<kw name="Supprimer un filtre">
+<arg>${vID_du_filtre}</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url= http://localhost:8088/share/page/dp/ws/faceted-search-config</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20231003 11:30:34.281" endtime="20231003 11:30:34.414"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:34.414" endtime="20231003 11:30:34.472"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231003 11:30:34.472" endtime="20231003 11:30:34.797"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bouton_supprimerFiltre1}${idValue}${bouton_supprimerFiltre2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:34.799" level="INFO">Clicking element 'xpath://img[@title="Cliquez pour supprimer ''ID_FiltreData31''"]'.</msg>
+<status status="PASS" starttime="20231003 11:30:34.798" endtime="20231003 11:30:34.899"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${bouton_confirmerSupressionFiltre}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:34.900" endtime="20231003 11:30:34.941"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${bouton_confirmerSupressionFiltre}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:34.942" level="INFO">Clicking element 'id:ALF_CRUD_SERVICE_DELETE_CONFIRMATION_DIALOG_CONFIRM_label'.</msg>
+<status status="PASS" starttime="20231003 11:30:34.942" endtime="20231003 11:30:35.081"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:34.280" endtime="20231003 11:30:35.081"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231003 11:30:38.083" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231003 11:30:35.082" endtime="20231003 11:30:38.083"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:22.655" endtime="20231003 11:30:38.084"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:22.648" endtime="20231003 11:30:38.085"/>
+</test>
+<kw name="Logout" library="keywords" type="TEARDOWN">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_HeaderUserMenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:38.088" endtime="20231003 11:30:38.136"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_HeaderUserMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:38.139" level="INFO">Clicking element 'id=HEADER_USER_MENU_POPUP'.</msg>
+<status status="PASS" starttime="20231003 11:30:38.137" endtime="20231003 11:30:38.264"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_HeaderDeconnexion}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231003 11:30:38.265" endtime="20231003 11:30:38.311"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_HeaderDeconnexion}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231003 11:30:38.313" level="INFO">Clicking element 'id=HEADER_USER_MENU_LOGOUT'.</msg>
+<status status="PASS" starttime="20231003 11:30:38.312" endtime="20231003 11:30:38.423"/>
+</kw>
+<status status="PASS" starttime="20231003 11:30:38.087" endtime="20231003 11:30:38.424"/>
+</kw>
+<status status="PASS" starttime="20231003 11:29:30.932" endtime="20231003 11:30:38.424"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="CreerUnNouveauFiltreNominal">CreerUnNouveauFiltreNominal</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

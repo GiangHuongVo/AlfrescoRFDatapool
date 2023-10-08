@@ -1,0 +1,4 @@
+*** Test Cases ***;${vID_du_filtre};${vNom_du_filtre};${vNom_du_filtre_modifier}
+Cas1;IDTest111;Giang_Test_ID111;Giang_Test_Editer_111
+Cas2;IDTest222;Giang_Test_ID222;Giang_Test_Editer_222
+Cas3;IDTest333;Giang_Test_ID333;Giang_Test_Editer_333
